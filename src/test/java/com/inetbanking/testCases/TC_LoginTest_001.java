@@ -14,14 +14,13 @@ public class TC_LoginTest_001 extends BaseClass {
         lp.setPassword(password);
         lp.clickSubmit();
 
-        if(driver.getTitle().equals("Welcome To Manager's Page of Guru99 Bank")){
+        if(driver.getTitle().equals("Guru99 Bank Manager HomePage")){
             Assert.assertTrue(true);
             System.out.println(driver.getTitle());
         }
-//        else{
-//            Assert.assertTrue(false);
-//            System.out.println(driver.getTitle());
-//        }
+        else{
+            Assert.assertTrue(false);
+        }
 
     }
 }
