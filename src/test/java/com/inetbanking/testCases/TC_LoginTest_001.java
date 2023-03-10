@@ -19,7 +19,7 @@ public class TC_LoginTest_001 extends BaseClass {
             System.out.println(driver.getTitle());
         }
         else{
-            Assert.assertTrue(false);
+            Assert.fail();
         }
 
     }
