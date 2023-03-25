@@ -1,0 +1,10 @@
+2023-03-25 15:16:53 INFO  ebanking:43 - Chrome Browser Opened
+2023-03-25 15:16:59 INFO  ebanking:11 - URL is Opened
+2023-03-25 15:16:59 INFO  ebanking:15 - Entered Username
+2023-03-25 15:16:59 INFO  ebanking:17 - Entered Password
+2023-03-25 15:17:01 INFO  ebanking:22 - Login Test Passed
+2023-03-25 15:22:26 INFO  ebanking:42 - Chrome Browser Opened
+2023-03-25 15:22:30 INFO  ebanking:11 - URL is Opened
+2023-03-25 15:22:30 INFO  ebanking:15 - Entered Username
+2023-03-25 15:22:30 INFO  ebanking:17 - Entered Password
+2023-03-25 15:22:35 INFO  ebanking:22 - Login Test Passed

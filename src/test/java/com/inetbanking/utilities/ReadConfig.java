@@ -1,8 +1,9 @@
 package com.inetbanking.utilities;
 
+import org.apache.xmlbeans.impl.xb.xsdschema.Public;
+
 import java.io.File;
 import java.io.FileInputStream;
-import java.util.Map;
 import java.util.Properties;
 
 public class ReadConfig {
@@ -10,7 +11,7 @@ public class ReadConfig {
 
     public ReadConfig(){
         // Declaring the Source Variable
-        File src = new File("./configurations/config.properties");
+        File src = new File("./Configurations/config.properties");
 
         try{
             //Create a new Instance of FileInputStream
@@ -56,6 +57,12 @@ public class ReadConfig {
         String firefoxpath;
         firefoxpath = pro.getProperty("firefoxpath");
         return firefoxpath;
+    }
+
+    public String getEdgePath(){
+        String edgepath;
+        edgepath = pro.getProperty("edgepath");
+        return edgepath;
     }
 
 
