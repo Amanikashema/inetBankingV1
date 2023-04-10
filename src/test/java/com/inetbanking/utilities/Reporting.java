@@ -9,6 +9,8 @@ import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import lombok.SneakyThrows;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;
@@ -17,6 +19,8 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import static com.inetbanking.testCases.BaseClass.driver;
 
 public class Reporting extends TestListenerAdapter {
     public ExtentSparkReporter htmlReporter;
@@ -30,7 +34,7 @@ public class Reporting extends TestListenerAdapter {
         String reportName = "Test-Report-"+timeStamp+".html";
         // Instantiating a html-reporter object
         htmlReporter = new ExtentSparkReporter(System.getProperty("user.dir")+"/test-output/"+reportName);
-        htmlReporter.loadXMLConfig(System.getProperty("user.dir")+ "/extent-config.xml");
+//        htmlReporter.loadXMLConfig(System.getProperty("user.dir")+ "/extent-config.xml");
 
         // Instantiating a new extent object
         extent = new ExtentReports();
@@ -54,12 +58,13 @@ public class Reporting extends TestListenerAdapter {
         logger = extent.createTest(results.getName());
         logger.log(Status.FAIL, MarkupHelper.createLabel(results.getName(), ExtentColor.RED));
 
-        String screenshotpath = System.getProperty("user.dir")+ "\\Screenshots\\"+results.getName()+".png";
+        String screenShotPath = System.getProperty("user.dir")+ "\\Screenshots\\"+results.getName()+".png";
 
-        File f = new File(screenshotpath);
+        File f = new File(screenShotPath);
+        File screenShotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
         if(f.exists()) {
-            logger.fail("Screenshot is below: " + logger.addScreenCaptureFromBase64String(screenshotpath));
+            logger.fail("Screenshot is below: " + logger.addScreenCaptureFromBase64String(screenShotPath));
         }
 
     }
