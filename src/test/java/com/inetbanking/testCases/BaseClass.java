@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.AfterClass;
@@ -45,10 +46,6 @@ public class BaseClass {
             System.setProperty("webdriver.gecko.driver", readConfig.getFirefoxPath());
             driver = new FirefoxDriver();
             driver.manage().window().maximize();
-        } else if (br.equals("ie")) {
-            System.setProperty("webdriver.ie.driver", readConfig.getIepath());
-            driver = new InternetExplorerDriver();
-            driver.manage().window().maximize();
         }
         else if (br.equals("edge")) {
             System.setProperty("webdriver.edge.driver", readConfig.getEdgePath());
@@ -56,10 +53,11 @@ public class BaseClass {
             driver.manage().window().maximize();
         }
         driver.get(basUrl);
+
     }
 
-    @AfterClass
-    public void tearDown(){
-        driver.quit();
-    }
+//    @AfterClass
+//    public void tearDown(){
+//        driver.quit();
+//   }
 }

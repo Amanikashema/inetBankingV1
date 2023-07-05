@@ -36,7 +36,7 @@ public class Reporting extends TestListenerAdapter {
         htmlReporter = new ExtentSparkReporter(System.getProperty("user.dir")+"/test-output/"+reportName);
 //        htmlReporter.loadXMLConfig(System.getProperty("user.dir")+ "/extent-config.xml");
 
-        // Instantiating a new extent object
+        // Instantiating a new  extent object
         extent = new ExtentReports();
         extent.attachReporter(htmlReporter);
         extent.setSystemInfo("Host name", "localhost");
